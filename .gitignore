@@ -39,4 +39,4 @@ coverage/
 # Optional yarn cache
 .yarn
 
-config/
+# config/
