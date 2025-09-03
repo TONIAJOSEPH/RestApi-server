@@ -17,10 +17,10 @@ import logger from "../utils/logger";
 const accessTokenCookieOptions: CookieOptions = {
   maxAge: 900000, // 15 mins
   httpOnly: true,
-  domain: "localhost",
+  domain: "restapi-server-i4ry.onrender.com",
   path: "/",
-  sameSite: "lax",
-  secure: false,
+  sameSite: "none",
+  secure: true,
 };
 
 const refreshTokenCookieOptions: CookieOptions = {
