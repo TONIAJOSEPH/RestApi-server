@@ -11,6 +11,7 @@ import {
   deleteSessionHandler,
   getUserSessionsHandler,
   googleOAuthHandler,
+  logoutHandler,
 } from "./controller/session.controller";
 import requireUser from "./middleware/requireUser";
 import {
@@ -164,6 +165,8 @@ function routes(app: Express) {
     [requireUser, validateResource(deleteProductSchema)],
     deleteProductHandler
   );
+
+  app.post("/api/logout", logoutHandler);
 }
 
 export default routes;

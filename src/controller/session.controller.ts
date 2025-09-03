@@ -136,3 +136,24 @@ export async function googleOAuthHandler(req: Request, res: Response) {
     return res.redirect(`${config.get("origin")}/oauth/error`);
   }
 }
+
+export async function logoutHandler(req: Request, res: Response) {
+  // Define a cookie options object with a very short maxAge
+  const cookieOptions: CookieOptions = {
+    maxAge: 0,
+    httpOnly: true,
+    domain: "rest-api-backend-4zf8.onrender.com", // Your backend domain
+    path: "/",
+    sameSite: "none",
+    secure: true,
+  };
+
+  // Clear the accessToken and refreshToken cookies
+  res.cookie("accessToken", "", cookieOptions);
+  res.cookie("refreshToken", "", cookieOptions);
+
+  // Send a success message or a redirect
+  return res.status(200).json({
+    message: "Logged out successfully!",
+  });
+}

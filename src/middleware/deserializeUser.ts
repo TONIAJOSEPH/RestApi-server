@@ -36,10 +36,10 @@ const deserializeUser = async (
       res.cookie("accessToken", newAccessToken, {
         maxAge: 900000, // 15 mins
         httpOnly: true,
-        domain: "localhost",
+        domain: "rest-api-backend-4zf8.onrender.com",
         path: "/",
-        sameSite: "strict",
-        secure: false,
+        sameSite: "none",
+        secure: true,
       });
     }
 
