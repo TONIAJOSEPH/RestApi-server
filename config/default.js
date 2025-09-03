@@ -2,7 +2,7 @@ module.exports = {
   port: process.env.PORT,
   origin: process.env.ORIGIN,
   dbUri: process.env.DBURI,
-  saltWorkFactor: process.env.SALTWORKFACTOR,
+  saltWorkFactor: parseInt(process.env.SALTWORKFACTOR, 10),
   accessTokenTtl: process.env.ACCESSTOKENTTL,
   refreshTokenTtl: process.env.REFRESHTOKENTTL,
   googleClientId: process.env.GOOGLECLIENTID,
